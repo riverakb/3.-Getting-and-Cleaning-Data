@@ -3,7 +3,7 @@ Code Book
 
 General Information on data
 
-	- READNE.md file
+	- README.md file
 	
 ==========================================================
 
