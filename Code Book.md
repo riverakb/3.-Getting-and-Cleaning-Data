@@ -1,37 +1,31 @@
-Code Book
-==========================================================
+Getting and Cleaning Data Project
+Description
+Addtional details for the variables, data and transformations used in the module "Getting and and Cleaning Data" by John Hopkins University under coursera.
 
-General Information on data
+Source
+This data was taken from UCI Machine Learning Repository
 
-	- README.md file
-	
-==========================================================
+Dataset Information
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
 
-Description of steps undertaken to clean and reshape the data
+The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details.
 
-1) Read the files containing the labels for activities and features of vector
+Record Details
+For each record in the dataset it is provided:
 
-2) Read the test data
+Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
+Triaxial Angular velocity from the gyroscope.
+A 561-feature vector with time and frequency domain variables.
+Its activity label.
+An identifier of the subject who carried out the experiment.
+Source
+http://archive.ics.uci.edu/ml/machine-learning-databases/00240/
 
-2.1) Read the data identifying subjects for test observations and rename columns
-2.2) Read the data containing the feture list for test observations and add descriptions
-2.3) Read the data identifying type of activity for test observations and rename columns
-2.4) Column bind files under 2.1, 2.2 and 2.3 to get the complete table for test observations
-2.5) Keep only necessary columns, Subject.Id, Activity and columns containing mean in their description
-2.6) Add the description for activity type to produce the final test data for observations
+Data Processing
+R scripts has been created in order to run the following processes as instructed. You may see the README.md on how the following instructions were implemented README.md
 
-3) Read the training data
-
-Reproduce steps 2.1 - 2.6 for training data to get the final training data for observations 
-
-4) Merge Training and Test data to create one data set (training and test data have the same format, they will
-	be bound vertically)
-
-5) Reshape the merged data to produce the desired format for data aggregation
-
-5.1) Use the melt function to prepare data for dcast aggregation.
-5.2) Aggregate data with dcast function to produce the final (tidy) data set
-
-6) Finnaly write out to csv file the tidy data set in the Data folder.
-
-==========================================================
+Merge the training and the test sets to create one data set.
+Extracts only the measurements on the mean and standard deviation for each measurement.
+Uses descriptive activity names to name the activities in the data set
+Appropriately labels the data set with descriptive variable names.
+From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
